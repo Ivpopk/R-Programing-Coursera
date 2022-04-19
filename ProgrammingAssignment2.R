@@ -1,4 +1,4 @@
-### Programing Assignment 2: Lexical Scoping.
+### Programming Assignment 2: Lexical Scoping.
 
 ################################################################################
 
@@ -55,11 +55,8 @@ cachemean <- function(x, ...) {
 
 cacheSolve <- function(x, ...) {
   m_inv <- x$get_m_inv()
-  if(!is.null(m_inv)) {
-    return(m_inv)
-  }
+  if(!is.null(m_inv)) m_inv
   matrizOK <- solve(x$get())
-  x$set_m_inv(matrizOK)
   matrizOK
 }
 
