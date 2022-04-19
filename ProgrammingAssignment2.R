@@ -21,17 +21,17 @@ makeVector <- function(x = numeric()) {
 # First function
 
 makeCacheMatrix <- function(x = matrix()) {
-  m_inv <- NULL
+  m_inv <- NULL # This is de matrix, keeping in mind that is invertible.
   set <- function(y) {
     x <<- y
-    m_inv <<- NULL
+    m_inv <<- NULL # Setting as NULL
   }
   get <- function() x
   set_m_inv <- function(invertir) m_inv <<- invertir
   get_m_inv <- function() m_inv
   list(set = set, get = get,
        set_m_inv = set_m_inv,
-       get_m_inv = get_m_inv)
+       get_m_inv = get_m_inv) # Getting.
 }
 
 
@@ -55,8 +55,8 @@ cachemean <- function(x, ...) {
 
 cacheSolve <- function(x, ...) {
   m_inv <- x$get_m_inv()
-  if(!is.null(m_inv)) m_inv
-  matrizOK <- solve(x$get())
+  if(!is.null(m_inv)) m_inv # Validating
+  matrizOK <- solve(x$get()) # Getting directly de inverted matrix
   matrizOK
 }
 
